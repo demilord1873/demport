@@ -11,7 +11,7 @@ const testimonials = [
     },
     {
         quote:
-        "He should keep going and never relax or quit. It's a good pursuit",
+        "We should work together to build scalable web apps.",
         author: "Fela Pro",
         role: "Fellow Programmer",
         avatar: "./2.png",
