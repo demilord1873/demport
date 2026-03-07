@@ -1,6 +1,6 @@
 import { Button } from "@dl/components/Button"
 import { AnimatedBorderButton } from "@dl/components/AnimatedBorderButton"
-import { ArrowRight, Download, Facebook, Github, Linkedin, ChevronDown } from "lucide-react";
+import { ArrowRight, Download, Facebook, Github, Linkedin, ChevronDown, View } from "lucide-react";
 
 const skills = [
     "React",
@@ -25,7 +25,7 @@ export const Hero = () => {
         {/** bg */}
         <div className="absolute inset-0">
             <img src="/hero-bg.jpg" alt="Hero" className="w-full h-full object-cover opacity-40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+            <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
         </div>
 
        {/* green dots */}
@@ -72,13 +72,17 @@ export const Hero = () => {
 
                     {/* CTA */}
                     <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+             <a href="#contact">
+                 <Button size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
+             </a>
+              <a href="https://ai-coaching-voice-agent.vercel.app">
               <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
+                <View className="w-5 h-5" />
+                AI Coaching Agent
               </AnimatedBorderButton>
+              </a>
             </div>
 
             {/** Social Links*/}
@@ -103,9 +107,9 @@ export const Hero = () => {
                 <div className="relative animate-fade-in animation-delay-300"> 
                     {/* Profile Image */}
                     <div className="relative max-w-xs mx-auto">
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+                        <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
                         <div className="relative glass rounded-3xl p-2 glow-border">
-                            <img src="/profile.png" alt="Luis Dem" className="w-full aspect-[4/5] object-cover rounded-2xl " />
+                            <img src="/profile.png" alt="Luis Dem" className="w-full aspect-4/5 object-cover rounded-2xl " />
 
                             {/* Floating Badge */}
                             <div className="absolute -bottom-4 -right-4 glass-2 rounded-xl px-4 py-3 animate-float">
@@ -132,7 +136,7 @@ export const Hero = () => {
                 <div className="relative overflow-hidden">
                     <div className="flex animate-marquee">
                         {[...skills, ...skills].map((skill, idx) => (
-                            <div key={idx} className="flex-shrink-0 px-8 py-4">
+                            <div key={idx} className="shrink-0 px-8 py-4">
                                 <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-forground transition-colors">
                                     {skill}
                                 </span>
