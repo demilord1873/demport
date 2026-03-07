@@ -20,14 +20,14 @@ const testimonials = [
         quote:
         "He's our Tech guru for the family. He's a star, I'm so impressed",
         author: "Ima Dem",
-        role: "Mother & Supporter",
+        role: "Mother & Supporter, Journalist",
         avatar: "./3.png",
     },
     {
         quote:
         "Just keep building and you'll get there. May God help you, Amen.",
         author: "David Dem",
-        role: "Father, Supporter",
+        role: "Father & Supporter, Crypto Miner",
         avatar: "./4.png",
     },
     {
@@ -94,7 +94,9 @@ export const Testimonials = () => {
                         </button>
 
                         <div className="flex gap-2">{testimonials.map((_, idx) => (
-                            <button className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === 0 ? "w-8 bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} />
+                            <button
+                            onClick={() => setActiveIdx(idx)}
+                             className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIdx ? "w-8 bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} />
                         ))}</div>
 
                         <button onClick={next} className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">
