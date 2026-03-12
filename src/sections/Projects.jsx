@@ -19,9 +19,9 @@ const projects = [
         github: "#",
     },
      {
-        title: "UIUX Mock",
-        description: "A tool that projects UI designs and reveal UX ideas. Very good for non-software or web devs.",
-        image: "/projects/download(4).jfif",
+        title: "Forge AI",
+        description: "A tool that builds web apps and websites. Very good for non-software or web devs.",
+        image: "/projects/download(2).jfif",
         tags: ["AI", "NextJs.", "Typescript"],
         link: "#",
         github: "#",
