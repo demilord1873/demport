@@ -21,7 +21,7 @@ const projects = [
      {
         title: "Forge AI",
         description: "A tool that builds web apps and websites. Very good for non-software or web devs.",
-        image: "/projects/download(2).jfif",
+        image: "/projects/download.jfif",
         tags: ["AI", "NextJs.", "Typescript"],
         link: "#",
         github: "#",
