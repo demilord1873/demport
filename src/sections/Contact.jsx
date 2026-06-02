@@ -9,6 +9,7 @@ import {
 import { Button } from "@dl/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { AnimatedBorderButton } from "@dl/components/AnimatedBorderButton"
 
 const contactInfo = [
   {
@@ -172,21 +173,22 @@ export const Contact = () => {
                 />
               </div>
 
-              <Button
-                className="w-full"
-                type="submit"
-                size="lg"
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <>Sending...</>
-                ) : (
-                  <>
+                <Button
+                  className="w-full"
+                  type="submit"
+                  size="lg"
+                  disabled={isLoading}
+                >
+
+                  {isLoading ? (
+                    <>Sending...</>
+                  ) : (
+                    <>
                       Send
-                    <Send className="w-5 h-5" />
-                  </>
-                )}
-              </Button>
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
+                </Button>
 
               {submitStatus.type && (
                 <div
