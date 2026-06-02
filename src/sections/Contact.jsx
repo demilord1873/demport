@@ -182,7 +182,7 @@ export const Contact = () => {
                   <>Sending...</>
                 ) : (
                   <>
-                      Send Message
+                      Send
                     <Send className="w-5 h-5" />
                   </>
                 )}
