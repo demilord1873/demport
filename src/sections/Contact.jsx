@@ -73,7 +73,7 @@ export const Contact = () => {
 
       setSubmitStatus({
         type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+        message: "Successfully sent! I'll get back to you.",
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
@@ -173,7 +173,8 @@ export const Contact = () => {
                 />
               </div>
 
-                <Button
+              <div className="text-center mt-12 animate-fade-in animation-delay-500">
+                <AnimatedBorderButton
                   className="w-full"
                   type="submit"
                   size="lg"
@@ -188,7 +189,8 @@ export const Contact = () => {
                       <Send className="w-5 h-5" />
                     </>
                   )}
-                </Button>
+                </AnimatedBorderButton>
+              </div>  
 
               {submitStatus.type && (
                 <div

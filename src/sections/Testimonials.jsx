@@ -1,41 +1,41 @@
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
-import {  useState } from "react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
     {
         quote:
-        "Luis is a very good tech developer. At his young age, he should be encouraged to keep going.",
+            "Luis is a very good tech developer. At his young age, he should be encouraged to keep going.",
         author: "Desire Joshua",
         role: "CEO, Graphic Designer",
         avatar: "./1.png",
     },
     {
         quote:
-        "We should work together to build scalable web apps.",
-        author: "Fela Pro",
-        role: "Fellow Programmer",
+            "Luis can adapt to any tech environment. He's a fast learner.",
+        author: "Mrs. Esther",
+        role: "Teacher, Supporter",
         avatar: "./2.png",
     },
     {
         quote:
-        "He's our Tech guru for the family. He's a star, I'm so impressed",
+            "He's our Tech guru for the family. He's a star, I'm so impressed",
         author: "Ima Dem",
         role: "Mother & Supporter, Journalist",
         avatar: "./3.png",
     },
     {
         quote:
-        "Just keep building and you'll get there. May God help you, Amen.",
+            "Just keep building and you'll get there. May God help you, Amen.",
         author: "David Dem",
         role: "Father & Supporter, Crypto Miner",
         avatar: "./4.png",
     },
     {
         quote:
-        "It's a good work. You'll be great in Life.",
-        author: "Oluzai Chuckwu",
-        role: "Media Personnel, Graphic Designer",
-        avatar: "./2.png",
+            "Keep the great work going. I see a bright future for you ahead.",
+        author: "Asanga Eyo",
+        role: "Programmmer, Graphic Designer",
+        avatar: "./asanga.png",
     },
 ]
 
@@ -49,8 +49,19 @@ export const Testimonials = () => {
     const previous = () => {
         setActiveIdx((prev) => (prev - 1 + testimonials.length) % testimonials.length)
     }
+
+    // Auto-slide effect running every 5 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            next();
+        }, 2500);
+
+        // Clears the interval when the component unmounts or activeIdx changes
+        return () => clearInterval(interval);
+    }, [activeIdx]);
+
     return <section id="testimonials" className="py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 w-200 h-200   bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 "/>
+        <div className="absolute top-1/2 left-1/2 w-200 h-200   bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 " />
         <div className="container mx-auto px-6 relative z-10">
             {/* Section Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -76,14 +87,14 @@ export const Testimonials = () => {
 
                         <div className="flex items-center gap-4">
                             <img
-                             src={testimonials[activeIdx].avatar}
-                             alt={testimonials[activeIdx].author}
-                             className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-                              />
-                              <div>
+                                src={testimonials[activeIdx].avatar}
+                                alt={testimonials[activeIdx].author}
+                                className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                            />
+                            <div>
                                 <div className="font-semibold">{testimonials[activeIdx].author}</div>
                                 <div className="text-sm text-muted-foreground">{testimonials[activeIdx].role}</div>
-                              </div>
+                            </div>
                         </div>
                     </div>
 
@@ -95,8 +106,9 @@ export const Testimonials = () => {
 
                         <div className="flex gap-2">{testimonials.map((_, idx) => (
                             <button
-                            onClick={() => setActiveIdx(idx)}
-                             className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIdx ? "w-8 bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} />
+                                key={idx}
+                                onClick={() => setActiveIdx(idx)}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === activeIdx ? "w-8 bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"}`} />
                         ))}</div>
 
                         <button onClick={next} className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all">

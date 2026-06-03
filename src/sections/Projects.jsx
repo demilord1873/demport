@@ -6,7 +6,7 @@ const projects = [
         title: "Jason Intelligence",
         description: "A integrational software AI for making dev work easier and faster, which contributes to faster shipping of software products.",
         image: "/projects/download (1).jfif",
-        tags: ["VSCODE", "RAG", "Typescript"],
+        tags: ["Python", "Node.js", "Typescript"],
         link: "#",
         github: "#",
     },
@@ -15,14 +15,6 @@ const projects = [
         description: "Next Generation of chatbots and text-based AIs that can satisfy human needs.",
         image: "/projects/download(2).jfif",
         tags: ["Gemini API", "React", "Javascript"],
-        link: "#",
-        github: "#",
-    },
-     {
-        title: "Forge AI",
-        description: "A tool that builds web apps and websites. Very good for non-software or web devs.",
-        image: "/projects/download.jfif",
-        tags: ["AI", "NextJs.", "Typescript"],
         link: "#",
         github: "#",
     },
@@ -78,7 +70,7 @@ export const Projects = () => {
                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                               />
                               <div
-                              className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60"
+                              className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60"
                                />
                                {/* Overlay Links */}
                                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
